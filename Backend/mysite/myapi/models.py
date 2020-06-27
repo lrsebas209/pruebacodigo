@@ -7,9 +7,7 @@ class User(models.Model):
     password = models.CharField(max_length=60)
     
 
-class Remember(models.Model):
+class Reminder(models.Model):
     title = models.CharField(max_length=35)
     date = models.CharField(max_length=35)
-    text = models.CharField(max_length=35)
-    def __str__(self):
-        return self.title
+    text = models.TextField();    

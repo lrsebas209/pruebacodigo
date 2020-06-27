@@ -1,0 +1,54 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<form class="form-horizontal">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Add Reminder</legend>
+
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">Title</label>
+            <div class="col-md-6">
+                <input #title id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md" required="">
+
+            </div>
+        </div>
+
+        <!-- Appended Input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="eventDate">Date</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input #date id="eventDate" name="eventDate" class="form-control" placeholder="DD/MM/YYYY" type="text" required="">
+                    <span class="input-group-addon">Calendar</span>
+                </div>
+
+            </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Descri">Description</label>
+            <div class="col-md-6">
+                <input #descri id="Descri" name="Descri" type="text" placeholder="" class="form-control input-md">
+
+            </div>
+        </div>
+
+        <!-- Button (Double) -->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="submitButton"></label>
+            <div class="col-md-8">
+                <button id="submitButton" name="submitButton" class="btn btn-primary" (click)="Save(title.value , date.value, descri.value)">Save</button>
+                <button id="cancelButton" name="cancelButton" class="btn btn-danger">Cancel</button>
+            </div>
+           
+        </div>
+         
+    </fieldset>
+</form>
+
+<button id="cancelButton" name="cancelButton" class="btn btn-safe" (click)="Show()">Show Reminders</button>

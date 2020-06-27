@@ -3,11 +3,14 @@ from django.db import models
 
 
 class User(models.Model):
-    name = models.CharField(max_length=60)
-    password = models.CharField(max_length=60)
+    name = models.CharField(max_length=30)
+    password = models.CharField(max_length=10)
     
 
 class Reminder(models.Model):
-    title = models.CharField(max_length=35)
-    date = models.CharField(max_length=35)
-    text = models.TextField();    
+    title = models.CharField(max_length=35);
+    date = models.DateField();
+    text = models.TextField();
+    
+    
+    

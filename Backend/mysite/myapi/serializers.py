@@ -11,4 +11,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 class ReminderSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Reminder
-        fields = ('title', 'date', 'text')
+        fields = ('title', 'date', 'text', 'User')

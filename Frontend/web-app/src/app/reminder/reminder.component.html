@@ -52,3 +52,8 @@
 </form>
 
 <button id="cancelButton" name="cancelButton" class="btn btn-safe" (click)="Show()">Show Reminders</button>
+
+<div *ngFor="let reminder of Reminders | async" style="width: 300px;">
+  <Reminder-details [reminder]='reminder'></Reminder-details>
+</div>
+ 

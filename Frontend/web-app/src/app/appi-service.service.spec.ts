@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ReminderService } from './reminder.service';
+import { AppiServiceService } from './appi-service.service';
 
-describe('ReminderService', () => {
-  let service: ReminderService;
+describe('AppiServiceService', () => {
+  let service: AppiServiceService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ReminderService);
+    service = TestBed.inject(AppiServiceService);
   });
 
   it('should be created', () => {

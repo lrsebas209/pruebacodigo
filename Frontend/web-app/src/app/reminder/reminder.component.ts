@@ -1,14 +1,16 @@
 import { Component, OnInit, ComponentFactoryResolver } from '@angular/core';
-import { ApiService } from '../api.service';
+
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Reminder } from '../reminder';
+import { AppiServiceService } from '../appi-service.service';
+
 
 @Component({
   selector: 'app-reminder',
   templateUrl: './reminder.component.html',
   styleUrls: ['./reminder.component.css'],
-  providers: [ApiService]
+  
 })
 export class ReminderComponent implements OnInit {
 
@@ -19,12 +21,25 @@ export class ReminderComponent implements OnInit {
   Reminders: Observable<Reminder[]>;
 
   reminder = [{title: 'title'}, {date: 'date'}, {text: 'text'}];
-  constructor(private _http:HttpClient) { 
-   
+  constructor(private api: AppiServiceService) { 
+    this.getReminders();
   }
 
   ngOnInit(): void {
   }
+  getReminders = () => {
+    this.api.getReminder().subscribe(
+      data => {
+        this.Reminders = data
+      },
+      error => {
+        console.log(error);
+      }
+      
+
+    )
+  }
+
   Save(title, date, descrip){
     
   }

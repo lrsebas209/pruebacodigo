@@ -13,3 +13,4 @@ class UserViewSet(viewsets.ModelViewSet):
 class ReminderViewSet(viewsets.ModelViewSet):
     queryset = Reminder.objects.all().order_by('title')
     serializer_class = ReminderSerializer
+

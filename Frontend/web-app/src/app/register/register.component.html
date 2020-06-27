@@ -22,14 +22,14 @@
         			    	<div class="col-lg-12">
         			    	    <label>USER</label>
         			    	    <div class="form-group">
-        			    			<input type="text" name="user" id="user" class="form-control" placeholder="">
+        			    			<input #user type="text" name="user" id="user" class="form-control" placeholder="" [(ngModel)]="usercreate.name">
         			    		</div>
         			    	</div>
         			    	
         			    	<div class="col-lg-12">
         			    	    <label>Password</label>
         			    	    <div class="form-group">
-        							<input type="password" name="password" id="password" class="form-control" placeholder="">
+        							<input #pass type="password" name="password" id="password" class="form-control" placeholder="" [(ngModel)]="usercreate.password">
         			    		</div>
         			    	</div>
         			    	
@@ -41,7 +41,7 @@
         			    	</div>
         			    	
         					<div class="col-lg-12">
-        					    <button type="submit" class="btn btn-default">
+        					    <button type="submit" class="btn btn-default" (click)='save(user.value, pass.value)'>
         							<span>CREATE</span>
         						</button>
         					</div>
